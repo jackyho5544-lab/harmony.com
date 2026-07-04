@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>參考資料 Resources｜安樂窩置業</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b4f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E安%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="resources">
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home"></a> / <span data-i18n="useful.h1"></span></div>
+    <h1 data-i18n="useful.h1"></h1>
+    <p data-i18n="useful.sub"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h3 style="color:var(--green-d)" data-i18n="useful.gov"></h3>
+    <div class="link-grid" style="margin-bottom:34px">
+      <a class="link-card" href="https://www.eaa.org.hk/" target="_blank" rel="noopener"><span class="ic">🏛️</span><span><b>地產代理監管局 EAA</b><span>eaa.org.hk</span></span></a>
+      <a class="link-card" href="https://www.landreg.gov.hk/" target="_blank" rel="noopener"><span class="ic">📜</span><span><b>土地註冊處 Land Registry</b><span>landreg.gov.hk</span></span></a>
+      <a class="link-card" href="https://www.ird.gov.hk/" target="_blank" rel="noopener"><span class="ic">💰</span><span><b>稅務局（印花稅）IRD</b><span>ird.gov.hk</span></span></a>
+      <a class="link-card" href="https://www.rvd.gov.hk/" target="_blank" rel="noopener"><span class="ic">📊</span><span><b>差餉物業估價署 RVD</b><span>rvd.gov.hk</span></span></a>
+    </div>
+
+    <h3 style="color:var(--green-d)" data-i18n="useful.bank"></h3>
+    <div class="link-grid" style="margin-bottom:34px">
+      <a class="link-card" href="https://www.hkmc.com.hk/" target="_blank" rel="noopener"><span class="ic">🏦</span><span><b>按揭證券公司 HKMC</b><span>hkmc.com.hk</span></span></a>
+      <a class="link-card" href="https://www.hsbc.com.hk/mortgages/" target="_blank" rel="noopener"><span class="ic">🏦</span><span><b>滙豐按揭 HSBC</b><span>hsbc.com.hk</span></span></a>
+      <a class="link-card" href="https://www.hangseng.com/zh-hk/personal/mortgages/" target="_blank" rel="noopener"><span class="ic">🏦</span><span><b>恒生按揭 Hang Seng</b><span>hangseng.com</span></span></a>
+      <a class="link-card" href="https://www.bochk.com/" target="_blank" rel="noopener"><span class="ic">🏦</span><span><b>中銀香港 BOCHK</b><span>bochk.com</span></span></a>
+    </div>
+
+    <h3 style="color:var(--green-d)" data-i18n="useful.tool"></h3>
+    <div class="info-grid">
+      <div class="link-grid">
+        <a class="link-card" href="mortgage.html"><span class="ic">🧮</span><span><b data-i18n="nav.mortgage"></b><span data-i18n="mort.sub"></span></span></a>
+        <a class="link-card" href="trends.html"><span class="ic">📈</span><span><b data-i18n="nav.trends"></b><span data-i18n="trends.sub"></span></span></a>
+        <a class="link-card" href="transactions.html"><span class="ic">📋</span><span><b data-i18n="nav.tran"></b><span data-i18n="tran.sub"></span></span></a>
+        <a class="link-card" href="list-property.html"><span class="ic">🏷️</span><span><b data-i18n="nav.list"></b><span data-i18n="list.sub"></span></span></a>
+      </div>
+      <form class="panel" id="dutyForm" style="align-self:start">
+        <h3 style="color:var(--green-d);margin-top:0" data-i18n="useful.calc.t"></h3>
+        <p class="form-note" data-i18n="useful.calc.p"></p>
+        <div class="form-row" style="margin:14px 0">
+          <label data-i18n="mort.price"></label>
+          <input type="number" name="price" value="6000000" min="0" step="10000">
+        </div>
+        <button class="btn btn-primary" type="submit" data-i18n="useful.calc.b"></button>
+        <div class="alert info hidden" id="dutyResult" style="margin-top:16px;margin-bottom:0"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

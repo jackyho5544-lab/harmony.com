@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>按揭計算 Mortgage Calculator｜安樂窩置業</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b4f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E安%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="mortgage">
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home"></a> / <span data-i18n="mort.h1"></span></div>
+    <h1 data-i18n="mort.h1"></h1>
+    <p data-i18n="mort.sub"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="info-grid">
+      <form class="panel" id="mortForm">
+        <div class="form-row" style="margin-bottom:16px">
+          <label data-i18n="mort.price"></label>
+          <input type="number" name="price" value="6000000" min="0" step="10000">
+        </div>
+        <div class="form-grid">
+          <div class="form-row"><label data-i18n="mort.ratio"></label>
+            <select name="ratio">
+              <option value="50">50%</option><option value="60">60%</option>
+              <option value="70" selected>70%</option><option value="80">80%</option><option value="90">90%</option>
+            </select></div>
+          <div class="form-row"><label data-i18n="mort.rate"></label>
+            <input type="number" name="rate" value="3.5" min="0" step="0.05"></div>
+          <div class="form-row"><label data-i18n="mort.years"></label>
+            <select name="years">
+              <option>10</option><option>15</option><option>20</option>
+              <option selected>25</option><option>30</option>
+            </select></div>
+          <div class="form-row" style="justify-content:flex-end">
+            <button class="btn btn-primary" type="submit" style="margin-top:auto" data-i18n="mort.calc"></button>
+          </div>
+        </div>
+        <p class="form-note" style="margin-top:14px" data-i18n="mort.disclaim"></p>
+      </form>
+
+      <div class="result-card">
+        <div class="rl" data-i18n="mort.monthly"></div>
+        <div class="big" id="rMonthly">$0</div>
+        <div class="result-split">
+          <div><b id="rLoan">$0</b><span data-i18n="mort.loan"></span></div>
+          <div><b id="rDown">$0</b><span data-i18n="mort.down"></span></div>
+          <div><b id="rInterest">$0</b><span data-i18n="mort.interest"></span></div>
+          <div><b id="rTotal">$0</b><span data-i18n="mort.total"></span></div>
+          <div style="grid-column:1/-1"><b id="rStress">$0</b><span data-i18n="mort.stress"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

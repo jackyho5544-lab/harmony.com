@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>聯絡我們 Contact Us｜安樂窩置業</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b4f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E安%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home"></a> / <span data-i18n="contact.h1"></span></div>
+    <h1 data-i18n="contact.h1"></h1>
+    <p data-i18n="contact.sub"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="panel">
+        <ul class="info-list">
+          <li><span class="ic">📍</span><span class="txt"><b data-i18n="contact.addr"></b><span data-i18n="COMPANY.addr"></span></span></li>
+          <li><span class="ic">📞</span><span class="txt"><b data-i18n="contact.tel"></b><a href="tel:+85221491818">2149 1818</a></span></li>
+          <li><span class="ic">💬</span><span class="txt"><b data-i18n="contact.mobile"></b><a href="https://wa.me/85260283039" target="_blank" rel="noopener">6028 3039</a></span></li>
+          <li><span class="ic">✉️</span><span class="txt"><b data-i18n="contact.email"></b><a href="mailto:info@28harmony.com">info@28harmony.com</a></span></li>
+          <li><span class="ic">🕙</span><span class="txt"><b data-i18n="contact.hours"></b><span data-i18n="contact.hours.v"></span></span></li>
+        </ul>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="tel:+85221491818">📞 2149 1818</a>
+          <a class="btn btn-gold" href="https://wa.me/85260283039" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="panel" id="contactForm">
+        <h3 style="color:var(--green-d);margin-top:0" data-i18n="contact.formt"></h3>
+        <div class="alert ok hidden" id="contactOk" data-i18n="contact.ok"></div>
+        <div class="form-row" style="margin-bottom:14px"><label data-i18n="contact.name"></label><span class="req">*</span><input name="name" required></div>
+        <div class="form-grid" style="margin-bottom:14px">
+          <div class="form-row"><label data-i18n="list.phone"></label><input name="phone"></div>
+          <div class="form-row"><label data-i18n="list.email"></label><input type="email" name="email"></div>
+        </div>
+        <div class="form-row" style="margin-bottom:14px"><label data-i18n="contact.subject"></label><input name="subject"></div>
+        <div class="form-row" style="margin-bottom:16px"><label data-i18n="contact.msg"></label><span class="req">*</span><textarea name="message" required></textarea></div>
+        <button class="btn btn-primary" type="submit" data-i18n="contact.send"></button>
+      </form>
+    </div>
+
+    <div style="margin-top:26px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
+      <iframe class="map-embed" title="map" loading="lazy"
+        src="https://maps.google.com/maps?q=%E7%B2%89%E5%B6%BA%E8%81%AF%E5%92%8C%E5%A2%9F%E5%92%8C%E6%B3%B0%E8%A1%9745%E8%99%9F&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

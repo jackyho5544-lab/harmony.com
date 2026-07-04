@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免費估價 Free Valuation｜安樂窩置業</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b4f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E安%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="valuation">
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home"></a> / <span data-i18n="val.h1"></span></div>
+    <h1 data-i18n="val.h1"></h1>
+    <p data-i18n="val.sub"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="info-grid">
+      <form class="panel" id="valForm">
+        <div class="form-grid">
+          <div class="form-row"><label data-i18n="val.district"></label><select name="district"></select></div>
+          <div class="form-row"><label data-i18n="val.type"></label><select name="type"></select></div>
+          <div class="form-row full"><label data-i18n="val.area"></label><input type="number" name="area" value="700" min="1" step="10"></div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="margin-top:16px" data-i18n="val.calc"></button>
+        <p class="form-note" style="margin-top:14px" data-i18n="val.disclaim"></p>
+      </form>
+
+      <div class="result-card">
+        <div class="rl" data-i18n="val.est"></div>
+        <div class="big" id="vMid">$0</div>
+        <div class="result-split">
+          <div><b id="vLow">$0</b><span data-i18n="val.low"></span></div>
+          <div><b id="vHigh">$0</b><span data-i18n="val.high"></span></div>
+          <div><b id="vAvg">$0</b><span data-i18n="val.psf"></span></div>
+          <div><b id="vN">0</b><span data-i18n="val.based"></span></div>
+        </div>
+        <a class="btn btn-gold btn-block" href="list-property.html" style="margin-top:16px" data-i18n="val.cta"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

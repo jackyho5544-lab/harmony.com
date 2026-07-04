@@ -1,0 +1,12 @@
+# Claude Code tooling — not part of the site
+.claude/
+.agents/
+skills-lock.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (scrapers etc. run from a separate scratchpad)
+node_modules/

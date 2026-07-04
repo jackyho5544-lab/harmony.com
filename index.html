@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安樂窩置業 Harmony Property｜粉嶺・上水・古洞 地產代理</title>
+<meta name="description" content="安樂窩置業 Harmony Property Group — 專營粉嶺、上水、古洞區村屋、住宅、物流倉、貨倉、倉地、工貿及寫字樓買賣租賃。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6b4f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E安%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<header class="site-header" id="site-header"></header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow hero-anim" data-i18n="home.badge"></span>
+      <h1 class="hero-anim h2" data-i18n="home.h1"></h1>
+      <p class="sub hero-anim h3" data-i18n="home.sub"></p>
+      <div class="meta hero-anim h3" data-i18n="home.meta"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH BOX -->
+<div class="wrap" style="margin-top:-22px;position:relative;z-index:5">
+  <div class="searchbox" id="searchBox">
+    <div class="search-tabs">
+      <button type="button" data-deal="sale" class="active" data-i18n="s.buy"></button>
+      <button type="button" data-deal="rent" data-i18n="s.rent"></button>
+    </div>
+    <form>
+      <div class="search-grid">
+        <div class="field"><label data-i18n="s.district"></label><select name="district"></select></div>
+        <div class="field"><label data-i18n="s.type"></label><select name="type"></select></div>
+        <div class="field field-price"><label data-i18n="s.price"></label><select name="price"></select></div>
+        <div class="field field-rent hidden"><label data-i18n="s.rentprice"></label><select name="rent"></select></div>
+        <div class="field"><label data-i18n="s.area"></label><select name="area"></select></div>
+        <div class="field" style="grid-column:1/-1"><label data-i18n="s.keyword"></label><input name="keyword" data-i18n-ph="s.kwph"></div>
+        <div class="search-actions">
+          <button type="reset" class="btn btn-ghost" data-i18n="s.reset"></button>
+          <button type="submit" class="btn btn-primary" data-i18n="s.search"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- GAZETTE TAPE — scrolling ledger of real transactions -->
+<section class="tape" id="gazTape" aria-label="成交紙帶 Gazette Tape">
+  <div class="tape-label"><b data-i18n="tape.label"></b><span id="tapeAsat"></span></div>
+  <div class="tape-track"><div class="tape-rail" id="tapeRail"></div></div>
+  <div class="tape-clock" id="tapeClock"></div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:52px">
+  <div class="wrap">
+    <div class="stat-row reveal">
+      <div class="stat"><div class="n" data-i18n="stat.years.n"></div><div class="l" data-i18n="stat.years"></div></div>
+      <div class="stat"><div class="n" data-i18n="stat.deals.n"></div><div class="l" data-i18n="stat.deals"></div></div>
+      <div class="stat"><div class="n" data-i18n="stat.listings.n"></div><div class="l" data-i18n="stat.listings"></div></div>
+      <div class="stat"><div class="n" data-i18n="stat.area.n"></div><div class="l" data-i18n="stat.area"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSPECTION LOG — recently-viewed listings (localStorage) -->
+<section class="rlog hidden" id="recentLog" aria-label="查閱紀錄 Inspection Log">
+  <div class="wrap">
+    <div class="rlog-head">
+      <span class="rlog-kicker" data-i18n="rlog.title"></span>
+      <button type="button" class="rlog-clear" id="rlogClear" data-i18n="rlog.clear"></button>
+    </div>
+    <div class="rlog-row" id="rlogRow"></div>
+  </div>
+</section>
+
+<!-- FEATURED (the one section that keeps an eyebrow) -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="t"><div class="kicker" data-i18n="home.feat.kicker"></div>
+        <h2 data-i18n="home.feat.title"></h2><p data-i18n="home.feat.sub"></p></div>
+      <a class="btn btn-ghost" href="search.html" data-i18n="home.feat.all"></a>
+    </div>
+    <div class="grid-cards" id="featGrid"></div>
+  </div>
+</section>
+
+<!-- TRANSACTIONS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="t">
+        <h2 data-i18n="home.tran.title"></h2><p data-i18n="home.tran.sub"></p></div>
+      <a class="btn btn-ghost" href="transactions.html" data-i18n="home.tran.all"></a>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <thead><tr>
+          <th data-i18n="tran.date"></th><th data-i18n="tran.estate"></th><th data-i18n="tran.district"></th>
+          <th class="num" data-i18n="tran.area"></th><th class="num" data-i18n="tran.price"></th><th class="num" data-i18n="tran.unit"></th>
+        </tr></thead>
+        <tbody id="tranBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US — statement + points (not three equal cards) -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="why-split">
+      <div class="why-lede reveal">
+        <h2 data-i18n="home.why.title"></h2>
+        <p data-i18n="home.why.lede"></p>
+      </div>
+      <div class="why-points">
+        <div class="why-point reveal"><div class="ic">📍</div><div><h3 data-i18n="home.why1.t"></h3><p data-i18n="home.why1.p"></p></div></div>
+        <div class="why-point reveal d1"><div class="ic">🏘️</div><div><h3 data-i18n="home.why2.t"></h3><p data-i18n="home.why2.p"></p></div></div>
+        <div class="why-point reveal d2"><div class="ic">🤝</div><div><h3 data-i18n="home.why3.t"></h3><p data-i18n="home.why3.p"></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="t"><div class="kicker" data-i18n="home.rev.kicker"></div><h2 data-i18n="home.rev.title"></h2></div></div>
+    <div class="review-row">
+      <figure class="review reveal"><div class="stars">★★★★★</div><blockquote data-i18n="home.rev1.r"></blockquote><figcaption data-i18n="home.rev1.t"></figcaption></figure>
+      <figure class="review reveal d1"><div class="stars">★★★★★</div><blockquote data-i18n="home.rev2.r"></blockquote><figcaption data-i18n="home.rev2.t"></figcaption></figure>
+      <figure class="review reveal d2"><div class="stars">★★★★★</div><blockquote data-i18n="home.rev3.r"></blockquote><figcaption data-i18n="home.rev3.t"></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section alt" style="padding-top:56px">
+  <div class="wrap">
+    <div class="panel reveal" style="background:radial-gradient(120% 140% at 0% 0%,#0f6b4f 0%,#08402f 60%);color:#fff;text-align:center;border:0;padding:44px 26px">
+      <h2 style="color:#fff" data-i18n="home.cta.t"></h2>
+      <p style="opacity:.92;max-width:52ch;margin:0 auto 20px" data-i18n="home.cta.p"></p>
+      <a class="btn btn-gold" href="contact.html" data-i18n="home.cta.b"></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
