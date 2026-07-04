@@ -510,6 +510,30 @@ function renderRecent(){
   window._recentNew=null;
 }
 
+/* ---- hero money shot: a real featured photo, drawn in by the gold rule ---- */
+function renderHeroCap(){
+  const hl=window._heroListing; if(!hl) return;
+  const img=document.getElementById("heroImg"); if(img) img.alt=lz(hl);
+  const cap=document.getElementById("heroCap");
+  if(cap) cap.innerHTML=`<b>№ ${hl.ref}</b> · ${lz(hl)}`;
+}
+function initHeroPlate(){
+  const img=document.getElementById("heroImg"); if(!img) return;
+  const hl = LISTINGS.find(l=>l.deal==="sale"&&l.hot&&l.photos&&l.photos.length)   // hot sale w/ photos
+          || LISTINGS.find(l=>l.photos&&l.photos.length) || LISTINGS[0];
+  if(!hl) return;
+  window._heroListing=hl;
+  const plate=document.querySelector(".hero-plate");
+  const p0=(hl.photos&&hl.photos[0])||hl.photo||svgThumb(hl);
+  img.src=hpLargeOf(p0);                                          // 1200px /lg/ variant, crisp
+  img.onerror=function(){ this.onerror=function(){ this.onerror=null; this.src=svgThumb(hl); }; this.src=p0; };
+  renderHeroCap();
+  const pl=document.getElementById("heroPlate");
+  if(pl) pl.onclick=e=>{ e.preventDefault(); openListing(hl.ref); };
+  const reveal=()=>{ if(plate) plate.classList.add("in"); };     // triggers the clip-wipe + gold rule
+  if(img.decode) img.decode().catch(()=>{}).then(reveal); else reveal();
+}
+
 /* ============================================================ */
 /*  HOME PAGE                                                    */
 /* ============================================================ */
@@ -525,11 +549,13 @@ function initHome(){
       <td class="num">$${Math.round(tr.price/tr.area).toLocaleString()}</td></tr>`).join("");
   };
   render();
+  initHeroPlate();
   initTicker();
   initStatMeter();
   renderRecent();
   document.getElementById("rlogClear")?.addEventListener("click", recentClear);
   document.addEventListener("langchange", render);
+  document.addEventListener("langchange", renderHeroCap);
   document.addEventListener("langchange", renderRecent);
   document.addEventListener("langchange", cancelStatMeter);   // don't let a running count-up fight the reset text
 }

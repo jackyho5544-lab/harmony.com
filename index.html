@@ -11,20 +11,22 @@
 <body data-page="home">
 <header class="site-header" id="site-header"></header>
 
-<!-- HERO -->
+<!-- HERO — money shot: copy left, real listing photo plate right -->
 <section class="hero">
-  <div class="wrap">
-    <div class="inner">
-      <span class="eyebrow hero-anim" data-i18n="home.badge"></span>
-      <h1 class="hero-anim h2" data-i18n="home.h1"></h1>
-      <p class="sub hero-anim h3" data-i18n="home.sub"></p>
-      <div class="meta hero-anim h3" data-i18n="home.meta"></div>
-    </div>
+  <div class="hero-copy">
+    <span class="eyebrow hero-anim" data-i18n="home.badge"></span>
+    <h1 class="hero-anim h2" data-i18n="home.h1"></h1>
+    <p class="sub hero-anim h3" data-i18n="home.sub"></p>
+    <div class="reg hero-anim h3"><span data-i18n="home.reg"></span></div>
   </div>
+  <a class="hero-plate" id="heroPlate" href="#" aria-label="精選樓盤 Featured listing">
+    <img id="heroImg" alt="">
+    <span class="plate-cap mono" id="heroCap"></span>
+  </a>
 </section>
 
 <!-- SEARCH BOX -->
-<div class="wrap" style="margin-top:-22px;position:relative;z-index:5">
+<div class="wrap home-search">
   <div class="searchbox" id="searchBox">
     <div class="search-tabs">
       <button type="button" data-deal="sale" class="active" data-i18n="s.buy"></button>

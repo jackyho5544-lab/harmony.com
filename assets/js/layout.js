@@ -48,7 +48,7 @@ function buildHeader(){
       </div>
       <div class="tb-right">
         <a href="search.html?fav=1" class="tb-fav">♥ <span data-i18n="nav.fav"></span> <span class="fav-count hidden">0</span></a>
-        <a href="${COMPANY.fb}" target="_blank" rel="noopener" data-i18n="tb.follow"></a>
+        <a href="${COMPANY.fb}" target="_blank" rel="noopener" class="tb-follow" data-i18n="tb.follow"></a>
         <div class="lang-toggle">
           <button data-lang="zh" onclick="setLang('zh')">中</button>
           <button data-lang="en" onclick="setLang('en')">EN</button>
