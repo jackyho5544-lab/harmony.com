@@ -20,7 +20,10 @@
 
 <section class="section">
   <div class="wrap" style="max-width:900px">
-    <div class="alert ok hidden" id="listOk" data-i18n="list.ok"></div>
+    <div class="alert ok hidden" id="listOk">
+      <span data-i18n="list.okhint"></span>
+      <div id="listOkActions" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"></div>
+    </div>
     <form class="panel" id="listForm">
       <h3 style="color:var(--green-d)" data-i18n="list.owner"></h3>
       <div class="form-grid" style="margin-bottom:22px">
@@ -37,13 +40,14 @@
         <div class="form-row"><label data-i18n="list.district2"></label><select name="district"></select></div>
         <div class="form-row"><label data-i18n="list.estate2"></label><input name="estate"></div>
         <div class="form-row"><label data-i18n="list.areaf"></label><input type="number" name="area" min="0"></div>
-        <div class="form-row"><label data-i18n="list.expect"></label><input type="number" name="expect" min="0"></div>
+        <div class="form-row"><label data-i18n="list.expect"></label><input name="expect" placeholder="例：680萬 / 1.8萬/月"></div>
         <div class="form-row full"><label data-i18n="list.remark"></label><textarea name="remark"></textarea></div>
         <label class="form-row full" style="flex-direction:row;align-items:center;gap:8px;font-size:14px">
           <input type="checkbox" required style="width:18px;height:18px"><span data-i18n="list.agree"></span>
         </label>
       </div>
       <button class="btn btn-primary" type="submit" style="margin-top:18px" data-i18n="list.submit"></button>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px" data-i18n="list.channelnote"></p>
     </form>
   </div>
 </section>

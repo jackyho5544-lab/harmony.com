@@ -3,6 +3,9 @@
 .agents/
 skills-lock.json
 
+# Internal-only 盤源開發 CRM (SOP / 話術 / 合規紅線) — must NOT ship to the public site
+agent/
+
 # OS / editor junk
 .DS_Store
 Thumbs.db

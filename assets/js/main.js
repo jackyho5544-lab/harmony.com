@@ -768,10 +768,40 @@ function initListProperty(){
   });
   document.getElementById("listForm").addEventListener("submit",e=>{
     e.preventDefault();
+    const f=e.target, en=getLang()==="en";
+    const val=n=>{const el=f.querySelector("[name="+n+"]");return el?el.value.trim():"";};
+    const dv=val("district"), pv=val("ptype");
+    const dz=(DISTRICTS.find(x=>x.v===dv)||{}).zh||dv||"—";
+    const pk=(PTYPES.find(x=>x.v===pv)||{}).k;
+    const pz=(typeof I18N!=="undefined"&&pk&&I18N.zh[pk])||ptypeName(pv)||"—";
+    const dealZh=val("intent")==="lease"?"出租":"出售";
+    // 固定中文標籤 = 前台表單與 CRM「貼上放盤」之間的解析合約，勿改標籤
+    const msg=[
+      "【安樂窩‧網上放盤】",
+      "放盤類別: "+dealZh,
+      "物業類型: "+pz,
+      "地區: "+dz,
+      "屋苑: "+(val("estate")||"—"),
+      "面積: "+(val("area")||"—"),
+      "期望價: "+(val("expect")||"—"),
+      "業主: "+val("name"),
+      "電話: "+val("phone"),
+      "電郵: "+(val("email")||"—"),
+      "備註: "+(val("remark")||"—"),
+      "（來自 28harmony.com 放盤表單）"
+    ].join("\n");
+    const enc=encodeURIComponent(msg);
+    const wa="https://wa.me/85260283039?text="+enc;
+    const email=(typeof COMPANY!=="undefined"&&COMPANY.email)||"info@28harmony.com";
+    const mail="mailto:"+email+"?subject="+encodeURIComponent((en?"Property listing - ":"網上放盤 - ")+(val("estate")||dz))+"&body="+enc;
+    const acts=document.getElementById("listOkActions");
+    if(acts) acts.innerHTML=
+      '<a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">💬 '+(en?"Send via WhatsApp":"用 WhatsApp 傳出")+'</a>'+
+      '<a class="btn btn-ghost" href="'+mail+'">✉ '+(en?"Send via Email":"用電郵傳出")+'</a>';
     const ok=document.getElementById("listOk");
     ok.classList.remove("hidden");
-    e.target.reset();
     if(ok.scrollIntoView) ok.scrollIntoView({behavior:"smooth",block:"center"});
+    toast(en?"Listing ready — choose a channel to send":"放盤已準備好，請揀方式傳出");
   });
 }
 function initContact(){
